@@ -1,3 +1,5 @@
 This repo contains:
 
 * wiki/EasyHacks - MediaWiki extension based on http://www.mediawiki.org/wiki/Extension:SimpleFeed
+
+* module_readmes - Tool for creating documentation based on README files in the "core" repository
