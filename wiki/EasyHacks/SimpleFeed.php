@@ -91,6 +91,8 @@ function parseFeed($input, $args, $parser)
 	// at http://php.net/date.
 	$date = (isset($args['date'])) ? $args['date'] : 'j F Y';
 
+	$label = (isset($args['label'])) ? $args['label'] : 'Easy Hack';
+
 	$output = '';
 
 	// Use the $entries(int) argument to determine how many entries to show.
@@ -136,7 +138,7 @@ function parseFeed($input, $args, $parser)
 		else
 		{
 			// turn "[Bug 1234] Title" into "Bug 1234] - Title" (the single ] closes the wiki-syntax link)
-			$title = preg_replace('/^\[Bug ([0-9]+])/','Easy Hack \\1 - ',$item->get_title());
+			$title = preg_replace('/^\[Bug ([0-9]+])/', $label.' \\1 - ',$item->get_title());
 			// Often the author is hard to recieve. Maybe it's not a very important
 			// thing to output into RSS...?
 			$itemauthor = $item->get_author();
